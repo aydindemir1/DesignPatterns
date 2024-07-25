@@ -3,6 +3,10 @@ using FactoryMethodDesignPattern;
 
 Console.WriteLine("Hello, World!");
 
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
 Dialog windowsDialog = new WindowsDialog();
 windowsDialog.Render(); // "Rendering Windows Button."
 

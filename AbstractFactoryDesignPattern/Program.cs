@@ -53,3 +53,54 @@ factory2 = new SmsNotificationFactory();
 service = new NotificationService(factory2);
 service.SendNotification("Hello via SMS!"); // "SMS Template: Sending SMS: Hello via SMS!" çıktısı
 
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+
+
+IGameFactory factory3;
+
+// Oyun platformuna göre factory seçimi
+factory3 = new PcGameFactory();
+Game game = new Game(factory3);
+game.Play(); // "PC character attacks with a gun." ve "PC weapon: using a laser."
+
+factory3 = new MobileGameFactory();
+game = new Game(factory3);
+game.Play(); // "Mobile character attacks with a swipe." ve "Mobile weapon: using a touch attack."
+
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+
+IReportFactory factory4;
+
+// Rapor formatına göre factory seçimi
+factory4 = new PdfReportFactory();
+ReportGenerator generator = new ReportGenerator(factory4);
+generator.GenerateReport(); // "Generating PDF report." ve "Drawing PDF chart."
+
+factory4 = new ExcelReportFactory();
+generator = new ReportGenerator(factory4);
+generator.GenerateReport(); // "Generating Excel report." ve "Drawing Excel chart."
+
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+
+IConfigFactory factory5;
+
+// Ortam türüne göre factory seçimi
+factory5 = new DevConfigFactory();
+ApplicationConfigurator configurator = new ApplicationConfigurator(factory5);
+configurator.Configure(); // "Configuring development database." ve "Setting up development logging."
+
+factory5 = new ProdConfigFactory();
+configurator = new ApplicationConfigurator(factory5);
+configurator.Configure(); // "Configuring production database." ve "Setting up production logging."
